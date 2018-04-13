@@ -3,10 +3,19 @@ package pl.tomaszKrawczyk.allertManager.model;
 /**
  * Created by Tomek Krawczyk on 28.01.2018.
  */
-public class alertForm {
+public class AlertForm {
 
     private String alert;
     private boolean isWarning;
+
+
+    public AlertForm(){
+
+        isWarning=true;
+    }
+
+
+
 
     public String getAlert() {
 
@@ -18,13 +27,13 @@ public class alertForm {
         this.alert = alert;
     }
 
-    public boolean getIsWarning() {
+    public Boolean getIsWarning() {
 
         return isWarning;
     }
 
-    public void setIsWarning(boolean isWarning) {
+    public void setIsWarning(Boolean warning) {
 
-        this.isWarning = isWarning;
+        isWarning = warning;
     }
 }

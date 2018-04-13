@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/2001/XMLSchema">
 <head>
     <meta charset="UTF-8">
-    <title>Komunikaty</title>
+    <title>Messages</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <div style="text-align: center;">
-    <div class="alert alert-success">
-        <strong>Success!</strong> Indicates a successful or positive action.
+    <th:block th:each="alert : ${list}">
+    <div class="alert" th:classappend="${alert.isWarning} ? alert-danger: alert-success">
+        <h1 th:text="${alert.alert}"></h1>
+    </div>
+
+    </th:block>
+
     </div>
 </body>
 </html>

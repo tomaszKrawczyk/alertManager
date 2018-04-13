@@ -1,7 +1,7 @@
 package pl.tomaszKrawczyk.allertManager.model.services;
 
 import org.springframework.stereotype.Service;
-import pl.tomaszKrawczyk.allertManager.model.alertForm;
+import pl.tomaszKrawczyk.allertManager.model.AlertForm;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class AlertListService {
 
-    private List<alertForm> alertFormList;
+    private List<AlertForm> alertFormList;
 
 
     public AlertListService() {
@@ -21,11 +21,11 @@ public class AlertListService {
     }
 
 
-    public List<alertForm> getAlertFormList() {
+    public List<AlertForm> getAlertFormList() {
         return alertFormList;
     }
 
-    public void addAlertToList(alertForm alert){
+    public void addAlertToList(AlertForm alert){
 
         alertFormList.add(alert);
 

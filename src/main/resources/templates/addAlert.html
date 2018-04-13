@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://thymleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Dodawanie komunikatów</title>
+    <title>Add messages</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -11,13 +11,13 @@
 <div style="text-align: center;">
 
 <h1 th:if="${info} !=null" th:text="${info}"></h1>
-  <form th:if="${info}== null" action="/addAlert" th: object="${alertForm}" method="post">
-      <textarea placeholder="Wpisz test" th:field="${alertForm.alert}"></textarea>
+  <form th:if="${info}== null" action="/addAlert" th: object="${AlertForm}" method="post">
+      <textarea placeholder="Write text" th:field="${AlertForm.alert}"></textarea>
       <br/>
-      Czy to ostrzeżenie?
-      <input type="checkbox" th:checked="${alertForm.isWarning}" th:field="${alertForm.isWarning}" th:name="${alertForm.isWarning}"/>
+      Is it a warning?
+      <input type="checkbox" th:checked="${AlertForm.isWarning}" th:field="${AlertForm.isWarning}" th:name="*{AlertForm.isWarning}"/>
       <br/>
-      <input type="submit" value="Wyślij"/>
+      <input type="submit" value="Send!"/>
   </form>
 </div>
 
