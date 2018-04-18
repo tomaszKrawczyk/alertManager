@@ -8,18 +8,21 @@
 </head>
 <body>
 
-<div style="text-align: center;">
+  <div style="text-align: center;">
 
-<h1 th:if="${info} !=null" th:text="${info}"></h1>
-  <form th:if="${info}== null" action="/addAlert" th: object="${AlertForm}" method="post">
-      <textarea placeholder="Write text" th:field="${AlertForm.alert}"></textarea>
-      <br/>
-      Is it a warning?
-      <input type="checkbox" th:checked="${AlertForm.isWarning}" th:field="${AlertForm.isWarning}" th:name="*{AlertForm.isWarning}"/>
-      <br/>
-      <input type="submit" value="Send!"/>
-  </form>
-</div>
+     <h1 th:if="${info} !=null" th:text="${info}"></h1>
+
+      <form th:if="${info}== null" action="/addAlert" th: object="${alertForm}" method="post">
+
+             <br/>
+             <textarea placeholder="Write text" th:field="${alertForm.alert}" th:errorClass="error"></textarea>
+             <span th:if="${#fields.hasErrors('${alertForm.alert}')}" th:errors="${alertForm.alert}"></span>
+             <br/>
+              Is it a warning?<input type="checkbox" th:checked="${alertForm.isWarning}" th:field="${alertForm.isWarning}" th:name="${alertForm.isWarning}"/>
+             <br/>
+             <input type="submit" value="Send!"/>
+      </form>
+  </div>
 
 </body>
 </html>
