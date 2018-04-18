@@ -15,7 +15,7 @@
       <form th:if="${info}== null" action="/addAlert" th: object="${alertForm}" method="post">
 
              <br/>
-             <textarea placeholder="Write text" th:field="${alertForm.alert}" th:errorClass="error"></textarea>
+             <textarea placeholder="Write text" th:field="${alertForm.alert}"></textarea>
              <span th:if="${#fields.hasErrors('${alertForm.alert}')}" th:errors="${alertForm.alert}"></span>
              <br/>
               Is it a warning?<input type="checkbox" th:checked="${alertForm.isWarning}" th:field="${alertForm.isWarning}" th:name="${alertForm.isWarning}"/>
